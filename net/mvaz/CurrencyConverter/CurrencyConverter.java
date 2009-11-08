@@ -5,6 +5,13 @@ import java.util.List;
 import org.jgrapht.alg.DijkstraShortestPath;
 import org.jgrapht.graph.*;
 
+/**
+ * TODO Consider in the future the use of java.util.Currency, which implements ISO-4217
+ * 
+ * 
+ * @author Miguel Vaz
+ *
+ */
 
 public class CurrencyConverter {
 
@@ -16,7 +23,7 @@ public class CurrencyConverter {
 		currencyGraph = new SimpleDirectedGraph<String, Double>(Double.class);
 	}
 	
-	// non-thread safe
+	// not thread-safe
 	public boolean setExchangeRate(String origin, String goal, double rate)
 	{
 		// add the vertices (currencies) if they do not exist
@@ -37,7 +44,7 @@ public class CurrencyConverter {
 		return addDirectCurrency && addReverseCurrency;
 	}
 	
-	
+	// not thread-safe
 	public double convertCurrency( String origin, String goal, double amount ) throws ExchangeRateUndefinedException
 	{
 		// find the shortest path between the two currencies
