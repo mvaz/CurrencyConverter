@@ -43,7 +43,7 @@ DEPENDENCIES
 
 JGraphT - free Java library for graph algorithms
 http://www.jgrapht.org/
-version 0.7.3
+version 0.8.1
 
 JUnit   - free
 http://www.junit.org/

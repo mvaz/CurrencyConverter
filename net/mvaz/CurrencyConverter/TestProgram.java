@@ -67,8 +67,10 @@ public class TestProgram {
 
 		}
 				
-			
+//		String currentClassPath = System.getProperty("java.class.path");
+//		System.out.println( ")" + currentClassPath + "(");
 		System.out.println("the end");
+		 
 		
 		
 //      Console objConsole = System.console();
