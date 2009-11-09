@@ -1,6 +1,3 @@
-/**
- * 
- */
 package net.mvaz.CurrencyConverter;
 
 import java.util.List;
@@ -15,16 +12,18 @@ import org.jgrapht.graph.*;
  *    SimpleDirectedGraph<String, Double>
  * Final exchange rates are computed using Dijkstra's shortest path algorithm.
  * 
- * In realistic cases, paths between currencies should be relatively small (max 2,3 edges),
+ * a) In realistic cases, paths between currencies should be relatively small (max 2,3 edges),
  * so that no major performance issues should exist (application dependent).
  * If that is the case, a possibility straightforward improvement could be made by
  * using a cache structure, e.g of type TreeMap< String, TreeMap< String, Double> >, where all
  * possible exchange rates are precomputed and stored. 
  * It would be updated every time the graph is changed.
  * 
+ * b) The class is not yet thread-safe. As soon as a concrete application where that is an issue,
+ * the issue will be addressed.
  * 
- * 
- * TODO Consider in the future the use of java.util.Currency, which implements ISO-4217
+ * c) Vertices are String because of the initial definition of the problem. Ideally, however, one
+ * could use java.util.Currency, which implements ISO-4217
  * 
  * 
  * @author Miguel Vaz
@@ -48,7 +47,7 @@ public class CurrencyConverter {
 	
 	/**
 	 * Defines (or changes) the exchange rate between the origin and goal currencies. 
-	 * (not thread-safe)
+	 * TODO: not thread-safe
 	 * 
 	 * @param origin
 	 * @param goal
@@ -77,7 +76,7 @@ public class CurrencyConverter {
 	
 	/**
 	 * Converts a given amount of an origin currency to a goal currency.
-	 *  (not thread-safe)
+	 * TODO: not thread-safe
 	 *  
 	 * @param origin the string identifier of the currency to be exchanged 
 	 * @param goal the string identifier of the target currency

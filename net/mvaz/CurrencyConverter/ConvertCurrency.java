@@ -18,8 +18,8 @@ public class ConvertCurrency {
     private static final String COMMAND_NOT_FOUND = "incorrect syntax or command not found";
 
     private static final String doubleRegex = "\\d+(?:[.,]\\d+)?";
-    private static final String setCurrencyRegex = "\\s*(.*?)\\s*->\\s*(.*?)\\s*\\(\\s*(" + doubleRegex + ")\\s*\\)";
-    private static final String convertCurrencyRegex = "\\s*([\\w+\\s+]+?)\\s*,\\s*([\\w\\s]+?)\\s*\\(\\s*(" + doubleRegex + ")\\s*\\)";
+    private static final String setCurrencyRegex = "\\s*(.*?)\\s*->\\s*(.*?)\\s*\\(\\s*(" + doubleRegex + ")\\s*\\)\\s*";
+    private static final String convertCurrencyRegex = "\\s*([\\w+\\s+]+?)\\s*,\\s*([\\w\\s]+?)\\s*\\(\\s*(" + doubleRegex + ")\\s*\\)\\s*";
 
     
     CurrencyConverter converter = new CurrencyConverter();
