@@ -115,6 +115,7 @@ public class CurrencyConverter {
 		return currencyGraph.containsVertex(currency);
 	}
 	
+	@Override
 	public String toString()
 	{
 		return currencyGraph.toString();
