@@ -33,8 +33,20 @@ Contributor(s):
 DESCRIPTION
 ~~~~~~~~~~~~
 
-The 
+This program implements a currency converter, implemented in Java.
 
+It contains
+ 
+ 
+ net/mvaz/CurrencyConverter/ConvertCurrency.java     
+                           /CurrencyConverter.java
+                           /DirectTest.java
+                           /ExchangeRateUndefinedException.java
+                           /TestProgram.java
+
+ jgrapht-jdk1.6.jar - graph library
+ README     - this file
+ run.sh     - launches the ConvertCurrency interactive console program
 
 
 ~~~~~~~~~~~~
