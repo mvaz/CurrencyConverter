@@ -18,40 +18,21 @@ public class ConvertCurrency {
     private static final String COMMAND_NOT_FOUND = "incorrect syntax or command not found";
 
     private static final String doubleRegex = "\\d+(?:[.,]\\d+)?";
-    private static final String setCurrencyRegex = "\\s*(.*?)\\s*->\\s*(.*?)\\s*\\((" + doubleRegex + ")\\)";
-    private static final String convertCurrencyRegex = "\\s*([\\w+\\s+]+?)\\s*,\\s*([\\w\\s]+?)\\s*\\((" + doubleRegex + ")\\)";
+    private static final String setCurrencyRegex = "\\s*(.*?)\\s*->\\s*(.*?)\\s*\\(\\s*(" + doubleRegex + ")\\s*\\)";
+    private static final String convertCurrencyRegex = "\\s*([\\w+\\s+]+?)\\s*,\\s*([\\w\\s]+?)\\s*\\(\\s*(" + doubleRegex + ")\\s*\\)";
 
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-
-        // the film star
-        CurrencyConverter converter = new CurrencyConverter();
-
-        // console for command interpretation
-        Console objConsole = System.console();
-        if (objConsole == null) {
-            System.out.println("exiting (null) no console available");
-            System.exit(1);
-        }
-        
-        // 
-        while (true) {
-            // get command
-            String command = objConsole.readLine( PROMPT );
-            
-            // exit if it is EOF
-            if ( command == null )
-                System.exit(0);
-            
-            String response = processCommand( converter, command );
-            System.out.println(response);
-        }
-            
-    }
     
-    public static String processCommand( CurrencyConverter converter, String command)
+    CurrencyConverter converter = new CurrencyConverter();
+   
+    
+    /**
+     * method for parsing and processing the commands.
+     * 
+     * @param converter
+     * @param command
+     * @return
+     */
+    public String processCommand( String command)
     {
 
         String output = null;
@@ -92,5 +73,44 @@ public class ConvertCurrency {
         return output;
         
     }
+
+    
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+
+        // the film star
+        ConvertCurrency converter = new ConvertCurrency();
+
+        // console for command interpretation
+        Console objConsole = System.console();
+        if (objConsole == null) {
+            System.out.println("exiting (null) no console available");
+            System.exit(1);
+        }
+        
+        // 
+        while (true) {
+            // get command
+            String command = objConsole.readLine( PROMPT );
+            
+            // exit if it is EOF
+            if ( command == null )
+                System.exit(0);
+            
+            String response = converter.processCommand( command );
+            System.out.println(response);
+        }
+            
+    }
+    
+    /**
+     * Auxiliary function for parsing the commands.
+     * 
+     * @param converter the CurrencyConverter object
+     * @param command 
+     * @return
+     */
 
 }

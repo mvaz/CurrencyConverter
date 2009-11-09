@@ -36,6 +36,7 @@ DESCRIPTION
 
 
 
+
 ~~~~~~~~~~~~
 DEPENDENCIES
 ~~~~~~~~~~~~
@@ -49,3 +50,25 @@ version 0.8.1 (needs JDK 1.6)
 JUnit   - free
 http://www.junit.org/
 version 4.5.0
+
+
+
+
+~~~~~~~~~~~~~
+USAGE EXAMPLE
+~~~~~~~~~~~~~
+
+CurrencyConverter miguel$ ./run.sh 
+  >> Euro -> JPY (100.1)
+ OK
+  >> Euro -> JPY (100.1 )
+ OK
+  >> Euro, JPY ( 10)
+ 1001.0
+  >> Euro -> Dollar (0.9)
+ OK
+  >> Dollar,JPY(1)
+ 111.22222222222221
+  >> 
+
+
