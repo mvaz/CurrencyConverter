@@ -1,6 +1,3 @@
-/**
- * 
- */
 package net.mvaz.CurrencyConverter;
 
 import java.io.Console;
@@ -8,13 +5,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * Program to interactively test the CurrencyConverter class, using the system console.
+ * 
  * @author Miguel Vaz
  *
  */
 public class ConvertCurrency {
 
     private static final String ERROR_EXCHANGE_RATE_NOT_DEFINED = "ERROR: exchange rate not defined";
-    private static String PROMPT = ">> ";
+    private static final String PROMPT = ">> ";
     private static final String COMMAND_OK = "OK";
     private static final String COMMAND_NOT_FOUND = "incorrect syntax or command not found";
 

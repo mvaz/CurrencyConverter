@@ -8,7 +8,7 @@ import org.junit.Test;
  * @author Miguel Vaz
  *
  */
-public class DirectTest {
+public class TestCurrencyConverter {
 
 	private final String usd = "USD";
 	private final String eur = "EUR";

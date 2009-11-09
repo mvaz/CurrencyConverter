@@ -38,6 +38,7 @@ This program implements a currency converter, implemented in Java.
 It contains
  
  
+ source files
  net/mvaz/CurrencyConverter/ConvertCurrency.java     
                            /CurrencyConverter.java
                            /DirectTest.java
