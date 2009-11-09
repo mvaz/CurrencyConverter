@@ -1,12 +1,13 @@
-/**
- * 
- */
 package net.mvaz.CurrencyConverter;
  
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-
+/**
+ * Unit tests for the basic functionality of the CurrencyConverter class
+ * @author Miguel Vaz
+ *
+ */
 public class DirectTest {
 
 	private final String usd = "USD";
@@ -17,6 +18,9 @@ public class DirectTest {
 
 	private static final double EQUALS_DELTA = 0.000000000000000000001;
 	
+	/**
+	 * tests the basic functionality
+	 */
 	@Test
     public void simpleTest() {
 		CurrencyConverter ccv = new CurrencyConverter();
@@ -35,7 +39,9 @@ public class DirectTest {
 		}
 	}
 	
-	
+	/**
+     * tests the inverse exchange rate
+     */
 	@Test
     public void reverseTest() {
 		CurrencyConverter ccv = new CurrencyConverter();
@@ -55,7 +61,10 @@ public class DirectTest {
 	}
 
 
-//	
+    /**
+     * tests the choice for the shortest "path", when different ways of
+     * calculating the exchange rate are available
+     */
 	@Test
 	public void testDifferentPaths() {
 		CurrencyConverter ccv = new CurrencyConverter();
@@ -85,6 +94,9 @@ public class DirectTest {
 		}
 	}
 	
+	/**
+	 * tests the ability to redefine an exchange rate
+	 */
 	@Test
 	public void testOverrideNodes() {
 		CurrencyConverter ccv = new CurrencyConverter();
@@ -108,25 +120,4 @@ public class DirectTest {
 		}
 	}
 
-
-	@Test
-	public void testWhatever() {
-		CurrencyConverter ccv = new CurrencyConverter();
-		
-		// build graph
-		double newRate = 0.21;
-		ccv.setExchangeRate(bla,gbp,0.13);
-		ccv.setExchangeRate(gbp,jpy,0.12);
-		ccv.setExchangeRate(gbp,jpy,newRate);
-
-		// convert and control
-		try {
-			double value = ccv.convertCurrency(gbp,jpy,1.0);
-			assertEquals(newRate, value, EQUALS_DELTA);
-
-		} catch (ExchangeRateUndefinedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 }
