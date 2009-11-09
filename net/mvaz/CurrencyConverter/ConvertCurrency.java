@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
  */
 public class ConvertCurrency {
 
+    private static final String ERROR_EXCHANGE_RATE_NOT_DEFINED = "ERROR: exchange rate not defined";
     private static String PROMPT = ">> ";
     private static final String COMMAND_OK = "OK";
     private static final String COMMAND_NOT_FOUND = "incorrect syntax or command not found";
@@ -40,6 +41,7 @@ public class ConvertCurrency {
         Matcher setCurrencyMatcher = Pattern.compile(setCurrencyRegex).matcher(command);
         Matcher convertCurrencyMatcher = Pattern.compile(convertCurrencyRegex).matcher(command);
 
+        // see which command matches, and act accordingly
         if ( setCurrencyMatcher.matches()  )
         {
             int i = 1;
@@ -63,7 +65,7 @@ public class ConvertCurrency {
                 output = String.valueOf(result);
 
             } catch (ExchangeRateUndefinedException e) {
-                e.printStackTrace();
+                output = ERROR_EXCHANGE_RATE_NOT_DEFINED;
             }
             
         } else {
