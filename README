@@ -59,24 +59,35 @@ version 4.5.0
 
 
 ~~~~~~~~~~~~~
-USAGE EXAMPLE
+EXAMPLE
 ~~~~~~~~~~~~~
 
-CurrencyConverter miguel$ ./run.sh 
- >> Euro -> JPY (100.1)
- OK
- >> Euro -> JPY (100.1 )
- OK
- >> Euro, JPY ( 10)
- 1001.0
- >> Euro -> Dollar (0.9)
- OK
- >> Dollar,JPY(1)
- 111.22222222222221
- >> Euro -> JPY (100.3)         
- OK
- >> Euro, JPY (10)
- 1003.0
+Example commands:
+
+    Euro -> Schweizer Franken (1.6798)
+    Euro -> US Dollar (1.6135)
+    Euro -> Britisch Pfund (0.8031)
+    US Dollar -> Britisch Pfund (0.9860)
+    
+    US Dollar, Schweizer Franken (10)
+
+Example session
+
+    CurrencyConverter miguel$ ./run.sh 
+    >> Euro -> JPY (100.1)
+    OK
+    >> Euro -> JPY (100.1 )
+    OK
+    >> Euro, JPY ( 10)
+    1001.0
+    >> Euro -> Dollar (0.9)
+    OK
+    >> Dollar,JPY(1)
+    111.22222222222221
+    >> Euro -> JPY (100.3)         
+    OK
+    >> Euro, JPY (10)
+    1003.0
   
 
 
