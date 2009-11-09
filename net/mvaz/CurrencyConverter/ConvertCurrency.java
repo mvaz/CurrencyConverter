@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
  */
 public class ConvertCurrency {
 
-    private static String PROMPT = " >> ";
+    private static String PROMPT = ">> ";
     private static final String COMMAND_OK = "OK";
     private static final String COMMAND_NOT_FOUND = "incorrect syntax or command not found";
 

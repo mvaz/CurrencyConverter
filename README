@@ -33,7 +33,7 @@ Contributor(s):
 DESCRIPTION
 ~~~~~~~~~~~~
 
-
+The 
 
 
 
@@ -59,16 +59,20 @@ USAGE EXAMPLE
 ~~~~~~~~~~~~~
 
 CurrencyConverter miguel$ ./run.sh 
-  >> Euro -> JPY (100.1)
+ >> Euro -> JPY (100.1)
  OK
-  >> Euro -> JPY (100.1 )
+ >> Euro -> JPY (100.1 )
  OK
-  >> Euro, JPY ( 10)
+ >> Euro, JPY ( 10)
  1001.0
-  >> Euro -> Dollar (0.9)
+ >> Euro -> Dollar (0.9)
  OK
-  >> Dollar,JPY(1)
+ >> Dollar,JPY(1)
  111.22222222222221
-  >> 
+ >> Euro -> JPY (100.3)         
+ OK
+ >> Euro, JPY (10)
+ 1003.0
+  
 
 
