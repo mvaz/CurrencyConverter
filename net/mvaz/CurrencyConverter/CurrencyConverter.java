@@ -9,6 +9,21 @@ import org.jgrapht.alg.DijkstraShortestPath;
 import org.jgrapht.graph.*;
 
 /**
+ * This class implements the a currency converter.
+ * Because not every exchange rate is directly defined, the basis data structure is an 
+ * unweighted, directed graph, with strings as vertices and edges holding the exchange rate.
+ *    SimpleDirectedGraph<String, Double>
+ * Final exchange rates are computed using Dijkstra's shortest path algorithm.
+ * 
+ * In realistic cases, paths between currencies should be relatively small (max 2,3 edges),
+ * so that no major performance issues should exist (application dependent).
+ * If that is the case, a possibility straightforward improvement could be made by
+ * using a cache structure, e.g of type TreeMap< String, TreeMap< String, Double> >, where all
+ * possible exchange rates are precomputed and stored. 
+ * It would be updated every time the graph is changed.
+ * 
+ * 
+ * 
  * TODO Consider in the future the use of java.util.Currency, which implements ISO-4217
  * 
  * 
@@ -18,8 +33,10 @@ import org.jgrapht.graph.*;
 
 public class CurrencyConverter {
 
-	// directed, because the exchange rate is direction specific
-	// non-weighted, because the exchange rates are the edges themselves
+	/*
+	 * directed, because the exchange rate is direction specific
+	 * unweighted, because the exchange rates are the edges themselves
+	 */
 	private SimpleDirectedGraph<String,Double> currencyGraph;
 	
 	/**
@@ -30,8 +47,9 @@ public class CurrencyConverter {
 	}
 	
 	/**
-	 * 
+	 * Defines (or changes) the exchange rate between the origin and goal currencies. 
 	 * (not thread-safe)
+	 * 
 	 * @param origin
 	 * @param goal
 	 * @param rate

@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author miguel
+ * @author Miguel Vaz
  *
  */
 public class ConvertCurrency {
@@ -71,7 +71,6 @@ public class ConvertCurrency {
         }
 
         return output;
-        
     }
 
     
