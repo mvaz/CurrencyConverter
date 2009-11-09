@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 package net.mvaz.CurrencyConverter;
  
 import static org.junit.Assert.*;

@@ -35,15 +35,16 @@ DESCRIPTION
 
 
 
-Compiled with JDK 1.6.
 
 ~~~~~~~~~~~~
 DEPENDENCIES
 ~~~~~~~~~~~~
 
+Compiled with JDK 1.6.
+
 JGraphT - free Java library for graph algorithms
 http://www.jgrapht.org/
-version 0.8.1
+version 0.8.1 (needs JDK 1.6)
 
 JUnit   - free
 http://www.junit.org/

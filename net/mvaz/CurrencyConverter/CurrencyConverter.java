@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 package net.mvaz.CurrencyConverter;
 
 import java.util.List;
@@ -19,11 +22,21 @@ public class CurrencyConverter {
 	// non-weighted, because the exchange rates are the edges themselves
 	private SimpleDirectedGraph<String,Double> currencyGraph;
 	
+	/**
+	 * Simple constructor. Initializes nothing.
+	 */
 	public CurrencyConverter() {
 		currencyGraph = new SimpleDirectedGraph<String, Double>(Double.class);
 	}
 	
-	// not thread-safe
+	/**
+	 * 
+	 * (not thread-safe)
+	 * @param origin
+	 * @param goal
+	 * @param rate
+	 * @return
+	 */
 	public boolean setExchangeRate(String origin, String goal, double rate)
 	{
 		// add the vertices (currencies) if they do not exist
@@ -44,7 +57,16 @@ public class CurrencyConverter {
 		return addDirectCurrency && addReverseCurrency;
 	}
 	
-	// not thread-safe
+	/**
+	 * Converts a given amount of an origin currency to a goal currency.
+	 *  (not thread-safe)
+	 *  
+	 * @param origin the string identifier of the currency to be exchanged 
+	 * @param goal the string identifier of the target currency
+	 * @param amount the amount of the origin currency to be exchanged
+	 * @return the amount of converted currency
+	 * @throws ExchangeRateUndefinedException
+	 */
 	public double convertCurrency( String origin, String goal, double amount ) throws ExchangeRateUndefinedException
 	{
 		// find the shortest path between the two currencies
@@ -65,16 +87,17 @@ public class CurrencyConverter {
 		return amount * rate;
 	}
 
+	/**
+	 * Checks whether the currency is already represented.
+	 * 
+	 * @param currency
+	 * @return
+	 */
 	public boolean containsCurrency( String currency )
 	{
 		return currencyGraph.containsVertex(currency);
 	}
 	
-//	protected DirectedWeightedMultigraph<String,Double> getGraph()
-//	{
-//		return currencyGraph;
-//	}
-//	
 	public String toString()
 	{
 		return currencyGraph.toString();

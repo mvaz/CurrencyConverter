@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 package net.mvaz.CurrencyConverter;
 
 //import java.io.Console;
