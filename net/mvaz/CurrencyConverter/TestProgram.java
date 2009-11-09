@@ -70,23 +70,10 @@ public class TestProgram {
 
 		}
 				
-//		String currentClassPath = System.getProperty("java.class.path");
-//		System.out.println( ")" + currentClassPath + "(");
 		System.out.println("the end");
 		 
 		
 		
-//      Console objConsole = System.console();
-//      if (objConsole != null) {
-//          // readLine method call.
-//          String userName = objConsole.readLine("Enter  username  : ");
-//          System.out.println("You have entered : " + userName);
-//      } else {
-//      	System.out.println("null");
-//      }
-      	
-
-//		System.out.println(result);
 
 	}
 
